@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aarya Lad — ECS Engineer & Cybersecurity Enthusiast</title>
+
+  <!-- Fonts: Poppins (body) + Syne (headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ── CUSTOM CURSOR ── -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- ── THREE.JS BACKGROUND CANVAS ── -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- ════════════════════════════
+       NAVBAR
+  ════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>AL<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <ul class="nav-links">
+        <li><a href="#about"      data-text="About">About</a></li>
+        <li><a href="#education"  data-text="Education">Education</a></li>
+        <li><a href="#skills"     data-text="Skills">Skills</a></li>
+        <li><a href="#projects"   data-text="Projects">Projects</a></li>
+        <li><a href="#certs"      data-text="Certs">Certs</a></li>
+        <li><a href="#interests"  data-text="Interests">Interests</a></li>
+        <li><a href="#experience" data-text="Experience">Experience</a></li>
+        <li><a href="#contact"    data-text="Contact">Contact</a></li>
+      </ul>
+
+      <!-- Hamburger -->
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MOBILE MENU ── -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about"      class="mobile-link">About</a></li>
+      <li><a href="#education"  class="mobile-link">Education</a></li>
+      <li><a href="#skills"     class="mobile-link">Skills</a></li>
+      <li><a href="#projects"   class="mobile-link">Projects</a></li>
+      <li><a href="#certs"      class="mobile-link">Certs</a></li>
+      <li><a href="#interests"  class="mobile-link">Interests</a></li>
+      <li><a href="#experience" class="mobile-link">Experience</a></li>
+      <li><a href="#contact"    class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ════════════════════════════
+       HERO
+  ════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-content">
+
+      <!-- Available badge -->
+      <div class="hero-badge reveal-up">
+        <span class="badge-dot"></span>
+        Open to Internships &amp; Collaborations
+      </div>
+
+      <!-- Name -->
+      <h1 class="hero-name reveal-up">
+        <span class="name-line">Aarya</span>
+        <span class="name-line gradient-text">Lad</span>
+      </h1>
+
+      <!-- Static subtitle -->
+      <p class="hero-role reveal-up">
+        ECS Engineering Student &nbsp;|&nbsp; Developer &nbsp;|&nbsp; Cybersecurity Enthusiast
+      </p>
+
+      <!-- Typing animation -->
+      <div class="hero-subtitle reveal-up">
+        <span class="typing-wrapper">
+          <span id="typed-text"></span>
+          <span class="cursor-blink">|</span>
+        </span>
+      </div>
+
+      <!-- CTA buttons -->
+      <div class="hero-actions reveal-up">
+        <a href="#projects" class="btn btn-primary">
+          <span>View Projects</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="resume.pdf" class="btn btn-ghost" download>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <span>Download Resume</span>
+        </a>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="hero-scroll reveal-up">
+        <div class="scroll-indicator">
+          <div class="scroll-dot"></div>
+        </div>
+        <span>Scroll to explore</span>
+      </div>
+    </div>
+
+    <!-- Floating UI cards -->
+    <div class="float-card float-card--1 reveal-up">
+      <div class="float-card-icon">🔒</div>
+      <div>
+        <div class="float-card-title">Cybersecurity</div>
+        <div class="float-card-sub">CIA Triad & Networking</div>
+      </div>
+    </div>
+    <div class="float-card float-card--2 reveal-up">
+      <div class="float-card-icon">⚡</div>
+      <div>
+        <div class="float-card-title">Arduino Dev</div>
+        <div class="float-card-sub">Sensors & Circuits</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       ABOUT
+  ════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-label reveal-up">
+        <span class="label-line"></span>
+        <span>01 — About Me</span>
+      </div>
+
+      <div class="about-grid">
+        <!-- Profile image / avatar panel -->
+        <div class="about-image-wrap reveal-left">
+          <div class="image-tilt-wrapper" id="tiltCard">
+            <div class="image-tilt-inner">
+              <!-- Avatar illustration -->
+              <div class="profile-placeholder">
+                <div class="profile-avatar">
+                  <svg width="90" height="90" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="38" r="22" fill="url(#avatarGrad)"/>
+                    <ellipse cx="50" cy="85" rx="35" ry="25" fill="url(#avatarGrad)"/>
+                    <defs>
+                      <linearGradient id="avatarGrad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#38bdf8"/>
+                        <stop offset="100%" stop-color="#a78bfa"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+                <div class="profile-glow"></div>
+              </div>
+              <div class="tilt-shine"></div>
+            </div>
+          </div>
+
+          <!-- Floating stat badges -->
+          <div class="about-badge about-badge--exp">
+            <span class="badge-num">2nd</span>
+            <span class="badge-text">Year<br>ECS Student</span>
+          </div>
+          <div class="about-badge about-badge--proj">
+            <span class="badge-num">7+</span>
+            <span class="badge-text">Projects<br>Built</span>
+          </div>
+        </div>
+
+        <!-- Text content -->
+        <div class="about-text reveal-right">
+          <h2 class="section-title">
+            Building with <em class="gradient-text">code</em> &amp;<br>curiosity
+          </h2>
+
+          <p>
+            Second-year Electronics and Computer Science (ECS) student at Fr. Conceicao Rodrigues College of Engineering, Mumbai University. Strong interest in cybersecurity, networking fundamentals, and hands-on problem solving.
+          </p>
+          <p>
+            Passionate about building real-world projects using Arduino, programming, and web technologies. I believe great engineering lives at the intersection of logical thinking and creative experimentation.
+          </p>
+
+          <!-- Interest tags -->
+          <div class="about-tags">
+            <span class="atag">🔒 Cybersecurity</span>
+            <span class="atag">🤖 Arduino &amp; IoT</span>
+            <span class="atag">💻 C / C++ / Python</span>
+            <span class="atag">🌐 Networking</span>
+          </div>
+
+          <!-- Resume download -->
+          <a href="resume.pdf" class="btn btn-outline" download>
+            <span>Download Resume</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       EDUCATION
+  ════════════════════════════ -->
+  <section id="education">
+    <div class="container">
+      <div class="section-label reveal-up">
+        <span class="label-line"></span>
+        <span>02 — Education</span>
+      </div>
+      <h2 class="section-title text-center reveal-up">
+        My <em class="gradient-text">Academic</em> Journey
+      </h2>
+
+      <div class="edu-card glass reveal-up">
+        <div class="edu-icon">🎓</div>
+        <div class="edu-body">
+          <div class="edu-meta">
+            <span class="edu-year">2024 – 2028</span>
+            <span class="edu-status">Currently Enrolled</span>
+          </div>
+          <h3 class="edu-degree">Bachelor of Engineering</h3>
+          <p class="edu-field">Electronics and Computer Science (ECS)</p>
+          <p class="edu-college">Fr. Conceicao Rodrigues College of Engineering (FRCRCE)</p>
+          <p class="edu-uni">Mumbai University · Mumbai, India</p>
+        </div>
+        <div class="edu-glow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       SKILLS
+  ════════════════════════════ -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-label reveal-up">
+        <span class="label-line"></span>
+        <span>03 — Skills</span>
+      </div>
+      <h2 class="section-title text-center reveal-up">
+        My <em class="gradient-text">Tech</em> Stack
+      </h2>
+      <p class="section-desc reveal-up">Technologies and abilities I bring to the table</p>
+
+      <div class="skills-grid">
+
+        <!-- Technical skills -->
+        <div class="skill-category reveal-up">
+          <h3 class="skill-cat-title">
+            <span class="cat-icon">⚙️</span> Technical Skills
+          </h3>
+          <div class="skill-items">
+
+            <div class="skill-chip">
+              <div class="chip-icon">🔵</div>
+              <div class="chip-info">
+                <span class="chip-name">C / C++</span>
+                <div class="chip-bar"><div class="chip-fill" data-w="80"></div></div>
+              </div>
+              <span class="chip-pct">80%</span>
+            </div>
+
+            <div class="skill-chip">
+              <div class="chip-icon">🐍</div>
+              <div class="chip-info">
+                <span class="chip-name">Python (Basic)</span>
+                <div class="chip-bar"><div class="chip-fill" data-w="55"></div></div>
+              </div>
+              <span class="chip-pct">55%</span>
+            </div>
+
+            <div class="skill-chip">
+              <div class="chip-icon">🤖</div>
+              <div class="chip-info">
+                <span class="chip-name">Arduino</span>
+                <div class="chip-bar"><div class="chip-fill" data-w="75"></div></div>
+              </div>
+              <span class="chip-pct">75%</span>
+            </div>
+
+            <div class="skill-chip">
+              <div class="chip-icon">🌐</div>
+              <div class="chip-info">
+                <span class="chip-name">HTML</span>
+                <div class="chip-bar"><div class="chip-fill" data-w="65"></div></div>
+              </div>
+              <span class="chip-pct">65%</span>
+            </div>
+
+            <div class="skill-chip">
+              <div class="chip-icon">📄</div>
+              <div class="chip-info">
+                <span class="chip-name">LaTeX</span>
+                <div class="chip-bar"><div class="chip-fill" data-w="60"></div></div>
+              </div>
+              <span class="chip-pct">60%</span>
+            </div>
+
+            <div class="skill-chip">
+              <div class="chip-icon">🔒</div>
+              <div class="chip-info">
+                <span class="chip-name">Cybersecurity Fundamentals</span>
+                <div class="chip-bar"><div class="chip-fill" data-w="65"></div></div>
+              </div>
+              <span class="chip-pct">65%</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Soft skills -->
+        <div class="skill-category reveal-up">
+          <h3 class="skill-cat-title">
+            <span class="cat-icon">🧠</span> Soft Skills
+          </h3>
+          <div class="skill-items">
+
+            <div class="skill-chip">
+              <div class="chip-icon">🧩</div>
+              <div class="chip-info">
+                <span class="chip-name">Problem Solving</span>
+                <div class="chip-bar"><div class="chip-fill" data-w="88"></div></div>
+              </div>
+              <span class="chip-pct">88%</span>
+            </div>
+
+            <div class="skill-chip">
+              <div class="chip-icon">🐞</div>
+              <div class="chip-info">
+                <span class="chip-name">Debugging</span>
+                <div class="chip-bar"><div class="chip-fill" data-w="82"></div></div>
+              </div>
+              <span class="chip-pct">82%</span>
+            </div>
+
+            <div class="skill-chip">
+              <div class="chip-icon">📝</div>
+              <div class="chip-info">
+                <span class="chip-name">Documentation</span>
+                <div class="chip-bar"><div class="chip-fill" data-w="78"></div></div>
+              </div>
+              <span class="chip-pct">78%</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /.skills-grid -->
+
+      <!-- Tech pill tags -->
+      <div class="tech-pills reveal-up">
+        <span class="tech-pill">CIA Triad</span>
+        <span class="tech-pill">Network Basics</span>
+        <span class="tech-pill">Ultrasonic Sensors</span>
+        <span class="tech-pill">PIR Sensors</span>
+        <span class="tech-pill">Circuits</span>
+        <span class="tech-pill">Git</span>
+        <span class="tech-pill">Linux (basics)</span>
+        <span class="tech-pill">Console Apps</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       PROJECTS
+  ════════════════════════════ -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-label reveal-up">
+        <span class="label-line"></span>
+        <span>04 — Projects</span>
+      </div>
+      <h2 class="section-title text-center reveal-up">
+        Featured <em class="gradient-text">Work</em>
+      </h2>
+      <p class="section-desc reveal-up">Real-world projects I've built and experimented with</p>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: Speed Detection Radar -->
+        <div class="project-card glass reveal-up featured-card">
+          <div class="card-glow"></div>
+          <div class="project-meta">
+            <span class="project-tag">Arduino</span>
+            <div class="project-links">
+              <a href="#" class="icon-btn" title="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.933.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-visual">
+            <div class="proj-preview proj-preview--radar">
+              <div class="preview-bar"></div>
+              <div class="preview-content">
+                <div class="radar-anim">
+                  <div class="radar-ring r1"></div>
+                  <div class="radar-ring r2"></div>
+                  <div class="radar-sweep"></div>
+                  <div class="radar-dot"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="project-title">Speed Detection Radar</h3>
+          <p class="project-desc">Arduino-based system using ultrasonic sensors to calculate the speed of passing objects — a real embedded systems application.</p>
+          <div class="project-stack">
+            <span>Arduino</span><span>Ultrasonic Sensor</span><span>C/C++</span>
+          </div>
+        </div>
+
+        <!-- Project 2: Motion Detector Alarm -->
+        <div class="project-card glass reveal-up">
+          <div class="card-glow"></div>
+          <div class="project-meta">
+            <span class="project-tag">Arduino</span>
+            <div class="project-links">
+              <a href="#" class="icon-btn" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.933.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
+            </div>
+          </div>
+          <div class="project-visual">
+            <div class="proj-preview proj-preview--motion">
+              <div class="preview-bar"></div>
+              <div class="preview-content">
+                <div class="motion-anim">
+                  <div class="motion-waves">
+                    <div class="wave w1"></div>
+                    <div class="wave w2"></div>
+                    <div class="wave w3"></div>
+                  </div>
+                  <div class="motion-alert">!</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="project-title">Motion Detector Alarm</h3>
+          <p class="project-desc">PIR sensor-based alert system that triggers a buzzer when motion is detected — practical home security prototype.</p>
+          <div class="project-stack">
+            <span>Arduino</span><span>PIR Sensor</span><span>Buzzer</span>
+          </div>
+        </div>
+
+        <!-- Project 3: Scientific Calculator -->
+        <div class="project-card glass reveal-up">
+          <div class="card-glow"></div>
+          <div class="project-meta">
+            <span class="project-tag">C / C++</span>
+            <div class="project-links">
+              <a href="#" class="icon-btn" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.933.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
+            </div>
+          </div>
+          <div class="project-visual">
+            <div class="proj-preview proj-preview--calc">
+              <div class="preview-bar"></div>
+              <div class="preview-content">
+                <div class="calc-grid">
+                  <div class="calc-cell">7</div><div class="calc-cell">8</div><div class="calc-cell">9</div><div class="calc-cell accent">÷</div>
+                  <div class="calc-cell">4</div><div class="calc-cell">5</div><div class="calc-cell">6</div><div class="calc-cell accent">×</div>
+                  <div class="calc-cell">1</div><div class="calc-cell">2</div><div class="calc-cell">3</div><div class="calc-cell accent">−</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="project-title">Scientific Calculator</h3>
+          <p class="project-desc">Console-based arithmetic calculator built in C/C++ supporting all fundamental math operations and operator precedence.</p>
+          <div class="project-stack">
+            <span>C</span><span>C++</span><span>Console App</span>
+          </div>
+        </div>
+
+        <!-- Project 4: Tic-Tac-Toe -->
+        <div class="project-card glass reveal-up">
+          <div class="card-glow"></div>
+          <div class="project-meta">
+            <span class="project-tag">Game — C/C++</span>
+            <div class="project-links">
+              <a href="#" class="icon-btn" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.933.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
+            </div>
+          </div>
+          <div class="project-visual">
+            <div class="proj-preview proj-preview--ttt">
+              <div class="preview-bar"></div>
+              <div class="preview-content">
+                <div class="ttt-grid">
+                  <div class="ttt-cell x-mark">X</div>
+                  <div class="ttt-cell"></div>
+                  <div class="ttt-cell o-mark">O</div>
+                  <div class="ttt-cell"></div>
+                  <div class="ttt-cell x-mark">X</div>
+                  <div class="ttt-cell"></div>
+                  <div class="ttt-cell o-mark">O</div>
+                  <div class="ttt-cell"></div>
+                  <div class="ttt-cell x-mark">X</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="project-title">Tic-Tac-Toe</h3>
+          <p class="project-desc">Two-player console game in C/C++ with full win detection, draw handling, and turn-based gameplay logic.</p>
+          <div class="project-stack">
+            <span>C</span><span>C++</span><span>Game Logic</span>
+          </div>
+        </div>
+
+        <!-- Project 5: Word Guessing Game -->
+        <div class="project-card glass reveal-up">
+          <div class="card-glow"></div>
+          <div class="project-meta">
+            <span class="project-tag">Game — Python</span>
+            <div class="project-links">
+              <a href="#" class="icon-btn" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.933.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
+            </div>
+          </div>
+          <div class="project-visual">
+            <div class="proj-preview proj-preview--word">
+              <div class="preview-bar"></div>
+              <div class="preview-content">
+                <div class="word-display">
+                  <div class="word-letters">
+                    <span class="wl revealed">P</span>
+                    <span class="wl">_</span>
+                    <span class="wl revealed">Y</span>
+                    <span class="wl">_</span>
+                    <span class="wl revealed">H</span>
+                    <span class="wl">_</span>
+                    <span class="wl revealed">N</span>
+                  </div>
+                  <p class="word-hint">🐍 Programming Language</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="project-title">Word Guessing Game</h3>
+          <p class="project-desc">Python-based interactive word guessing game with random word selection, hint system, and attempt tracking.</p>
+          <div class="project-stack">
+            <span>Python</span><span>Console App</span>
+          </div>
+        </div>
+
+        <!-- Project 6: Shopping Cart -->
+        <div class="project-card glass reveal-up">
+          <div class="card-glow"></div>
+          <div class="project-meta">
+            <span class="project-tag">C / C++</span>
+            <div class="project-links">
+              <a href="#" class="icon-btn" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.933.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
+            </div>
+          </div>
+          <div class="project-visual">
+            <div class="proj-preview proj-preview--cart">
+              <div class="preview-bar"></div>
+              <div class="preview-content">
+                <div class="cart-items">
+                  <div class="cart-row"><span>Item 1</span><span class="cart-price">₹120</span></div>
+                  <div class="cart-row"><span>Item 2</span><span class="cart-price">₹250</span></div>
+                  <div class="cart-total"><span>Total</span><span class="cart-price accent">₹370</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="project-title">Shopping Cart Application</h3>
+          <p class="project-desc">Console-based application demonstrating logic flow, data handling, item management, and total calculation.</p>
+          <div class="project-stack">
+            <span>C</span><span>C++</span><span>Data Structures</span>
+          </div>
+        </div>
+
+      </div><!-- /.projects-grid -->
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       CERTIFICATES
+  ════════════════════════════ -->
+  <section id="certs">
+    <div class="container">
+      <div class="section-label reveal-up">
+        <span class="label-line"></span>
+        <span>05 — Certificates</span>
+      </div>
+      <h2 class="section-title text-center reveal-up">
+        My <em class="gradient-text">Certifications</em>
+      </h2>
+
+      <div class="certs-grid">
+        <div class="cert-card glass reveal-up">
+          <div class="cert-glow"></div>
+          <div class="cert-icon">🛡️</div>
+          <div class="cert-body">
+            <h3 class="cert-title">Introduction to Cybersecurity</h3>
+            <p class="cert-issuer">Cisco Networking Academy</p>
+            <p class="cert-desc">Covered CIA triad, threat landscape, network security fundamentals, and best practices for digital safety.</p>
+          </div>
+          <div class="cert-badge">Verified</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       INTERESTS
+  ════════════════════════════ -->
+  <section id="interests">
+    <div class="container">
+      <div class="section-label reveal-up">
+        <span class="label-line"></span>
+        <span>06 — Interests</span>
+      </div>
+      <h2 class="section-title text-center reveal-up">
+        What <em class="gradient-text">Drives</em> Me
+      </h2>
+
+      <div class="interests-grid">
+
+        <div class="interest-card glass reveal-up">
+          <div class="interest-icon">🔒</div>
+          <h3>Cybersecurity &amp; Networking</h3>
+          <p>Exploring threats, defense mechanisms, CIA triad principles, and network security protocols.</p>
+        </div>
+
+        <div class="interest-card glass reveal-up">
+          <div class="interest-icon">🤖</div>
+          <h3>Arduino &amp; IoT Projects</h3>
+          <p>Building real-world hardware systems with sensors, actuators, and microcontrollers.</p>
+        </div>
+
+        <div class="interest-card glass reveal-up">
+          <div class="interest-icon">💻</div>
+          <h3>Programming &amp; Problem Solving</h3>
+          <p>Writing clean code in C, C++, and Python — turning logic into working solutions.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       EXPERIENCE / VOLUNTEERING
+  ════════════════════════════ -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-label reveal-up">
+        <span class="label-line"></span>
+        <span>07 — Experience</span>
+      </div>
+      <h2 class="section-title text-center reveal-up">
+        Community <em class="gradient-text">Involvement</em>
+      </h2>
+
+      <div class="exp-card glass reveal-up">
+        <div class="exp-icon">🤝</div>
+        <div class="exp-body">
+          <div class="exp-meta">
+            <span class="exp-role">Volunteer</span>
+            <span class="exp-type">Community Service</span>
+          </div>
+          <h3 class="exp-title">Heart and Soul Run</h3>
+          <ul class="exp-duties">
+            <li>Managed water stations for marathon runners throughout the event</li>
+            <li>Helped maintain safety standards and guided participants along the route</li>
+            <li>Coordinated with fellow volunteers for smooth event operations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       RESUME DOWNLOAD SECTION
+  ════════════════════════════ -->
+  <section id="resume-section">
+    <div class="container">
+      <div class="resume-banner glass reveal-up">
+        <div class="resume-glow"></div>
+        <div class="resume-text">
+          <h2 class="section-title">
+            Want to know <em class="gradient-text">more?</em>
+          </h2>
+          <p>Download my resume to explore my full experience, skills, and academic background.</p>
+        </div>
+        <a href="resume.pdf" class="btn btn-primary btn-lg" download>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <span>Download Resume</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       CONTACT
+  ════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-label reveal-up">
+        <span class="label-line"></span>
+        <span>08 — Contact</span>
+      </div>
+
+      <div class="contact-inner glass reveal-up">
+        <div class="contact-glow"></div>
+
+        <div class="contact-content">
+          <h2 class="section-title">
+            Let's build something <em class="gradient-text">together</em>
+          </h2>
+          <p>I'm open to internships, collaborations, and interesting projects. Have an idea? Let's talk!</p>
+
+          <!-- Contact details -->
+          <div class="contact-details">
+            <a href="tel:8104943381" class="contact-item">
+              <span class="citem-icon">📞</span>
+              <span>8104943381</span>
+            </a>
+            <a href="mailto:aaryalad49@gmail.com" class="contact-item">
+              <span class="citem-icon">✉️</span>
+              <span>aaryalad49@gmail.com</span>
+            </a>
+            <div class="contact-item">
+              <span class="citem-icon">📍</span>
+              <span>Mumbai, India</span>
+            </div>
+          </div>
+
+          <div class="contact-actions">
+            <a href="mailto:aaryalad49@gmail.com" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>Send Email</span>
+            </a>
+            <a href="resume.pdf" class="btn btn-ghost" download>Download Resume</a>
+          </div>
+        </div>
+
+        <!-- Social links -->
+        <div class="social-links">
+          <a href="https://github.com/" target="_blank" class="social-btn" data-tip="GitHub">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.933.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            <span class="social-tip">GitHub</span>
+          </a>
+          <a href="mailto:aaryalad49@gmail.com" class="social-btn" data-tip="Email">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span class="social-tip">Email</span>
+          </a>
+          <a href="tel:8104943381" class="social-btn" data-tip="Phone">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14h0v2.92z"/></svg>
+            <span class="social-tip">Phone</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       FOOTER
+  ════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>AL<span class="logo-bracket">/&gt;</span>
+      </a>
+      <p class="footer-copy">© 2026 Aarya Lad &nbsp;·&nbsp; Designed &amp; Built with ❤️ in Mumbai</p>
+      <a href="#hero" class="footer-top">↑ Top</a>
+    </div>
+  </footer>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
