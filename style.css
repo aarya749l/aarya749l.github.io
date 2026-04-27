@@ -487,7 +487,11 @@ body:not(:hover) .cursor-trail { opacity: 0; }
 
 .about-image-wrap { position: relative; }
 
-.image-tilt-wrapper { perspective: 800px; width: 320px; }
+.image-tilt-wrapper { 
+  perspective: 800px; 
+  width: 320px; 
+}
+
 .image-tilt-inner {
   border-radius: var(--radius-lg);
   background: var(--glass);
@@ -499,6 +503,7 @@ body:not(:hover) .cursor-trail { opacity: 0; }
   transform-style: preserve-3d;
   transition: transform 0.1s ease-out;
 }
+
 .tilt-shine {
   position: absolute;
   inset: 0;
@@ -508,33 +513,43 @@ body:not(:hover) .cursor-trail { opacity: 0; }
   transition: opacity 0.2s;
 }
 
+/* 🔥 UPDATED PROFILE SECTION */
 .profile-placeholder {
   position: relative;
-  width: 200px; height: 200px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(167,139,250,0.15));
-  border: 2px solid rgba(56,189,248,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden; /* IMPORTANT for image crop */
+  border: 2px solid rgba(56,189,248,0.3);
+  box-shadow: 0 0 30px rgba(56,189,248,0.15);
 }
-.profile-avatar { display: flex; align-items: center; justify-content: center; }
 
-.profile-avatar img {
+/* 🖼️ IMAGE STYLE */
+.profile-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the photo fills the circle without distortion */
-  display: block;
-}
-.profile-glow {
-  position: absolute;
-  inset: -20px;
+  object-fit: cover; /* fills circle properly */
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(56,189,248,0.12) 0%, transparent 70%);
-  animation: glowPulse 3s ease-in-out infinite;
+  transition: transform 0.4s ease;
 }
 
+/* ✨ HOVER EFFECT */
+.image-tilt-inner:hover .profile-img {
+  transform: scale(1.08);
+}
+
+/* 🌟 GLOW EFFECT */
+.profile-glow {
+  position: absolute;
+  inset: -25px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56,189,248,0.2) 0%, transparent 70%);
+  animation: glowPulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* BADGES */
 .about-badge {
   position: absolute;
   display: flex;
@@ -547,8 +562,10 @@ body:not(:hover) .cursor-trail { opacity: 0; }
   border: 1px solid var(--glass-border);
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
+
 .about-badge--exp  { top: 10%; right: -20px; }
 .about-badge--proj { bottom: 8%; left: -20px; }
+
 .badge-num {
   font-family: var(--font-head);
   font-size: 1.6rem;
@@ -558,16 +575,30 @@ body:not(:hover) .cursor-trail { opacity: 0; }
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.badge-text { font-size: 0.72rem; line-height: 1.3; color: var(--text-muted); }
 
+.badge-text { 
+  font-size: 0.72rem; 
+  line-height: 1.3; 
+  color: var(--text-muted); 
+}
+
+/* TEXT */
 .about-text h2 { margin-bottom: 1.5rem; }
-.about-text p { color: var(--text-dim); margin-bottom: 1rem; line-height: 1.8; }
+
+.about-text p { 
+  color: var(--text-dim); 
+  margin-bottom: 1rem; 
+  line-height: 1.8; 
+}
+
+/* TAGS */
 .about-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
   margin: 1.5rem 0 2rem;
 }
+
 .atag {
   padding: 0.4rem 0.9rem;
   border-radius: var(--radius-pill);
@@ -578,8 +609,11 @@ body:not(:hover) .cursor-trail { opacity: 0; }
   color: var(--text-dim);
   transition: all 0.2s;
 }
-.atag:hover { border-color: rgba(56,189,248,0.3); color: var(--neon-blue); }
 
+.atag:hover { 
+  border-color: rgba(56,189,248,0.3); 
+  color: var(--neon-blue); 
+}
 /* ════════════════════════════
    EDUCATION
 ════════════════════════════ */
@@ -1038,19 +1072,20 @@ body:not(:hover) .cursor-trail { opacity: 0; }
 }
 
 .certs-grid {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
   margin-top: 2.5rem;
 }
 
 .cert-card {
   border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  max-width: 500px;
+  padding: 2rem;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 1rem;
   position: relative;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -1454,6 +1489,10 @@ footer {
   .featured-card { grid-column: 1 / -1; }
 }
 
+@media (max-width: 1100px) {
+  .certs-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 900px) {
   .interests-grid { grid-template-columns: 1fr; }
 }
@@ -1483,6 +1522,7 @@ footer {
 
   /* Education / Certs / Exp cards */
   .edu-card, .exp-card { flex-direction: column; gap: 1rem; padding: 2rem 1.5rem; }
+  .certs-grid { grid-template-columns: 1fr; }
   .cert-card { flex-direction: column; }
 
   /* Contact */
@@ -1501,4 +1541,108 @@ footer {
   .hero-actions { flex-direction: column; }
   .btn { width: 100%; justify-content: center; }
   .contact-actions { flex-direction: column; }
+}
+
+/* ─── Faculty Data Formatter Preview ─── */
+.proj-preview--faculty {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+.faculty-anim {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+.faculty-table {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 0.6rem;
+  border: 1px solid rgba(56,189,248,0.25);
+}
+.faculty-header {
+  display: flex;
+  background: rgba(56,189,248,0.2);
+}
+.fh-cell {
+  flex: 1;
+  padding: 3px 5px;
+  color: #38bdf8;
+  font-weight: 600;
+  border-right: 1px solid rgba(56,189,248,0.15);
+  font-size: 0.55rem;
+}
+.faculty-row {
+  display: flex;
+  background: rgba(255,255,255,0.04);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.fr-cell {
+  flex: 1;
+  padding: 3px 5px;
+  color: rgba(255,255,255,0.7);
+  border-right: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.55rem;
+}
+.faculty-arrow {
+  color: #a78bfa;
+  font-size: 1rem;
+  line-height: 1;
+}
+.faculty-badge {
+  background: linear-gradient(90deg, rgba(56,189,248,0.2), rgba(167,139,250,0.2));
+  border: 1px solid rgba(167,139,250,0.4);
+  border-radius: 20px;
+  padding: 2px 10px;
+  color: #a78bfa;
+  font-size: 0.55rem;
+  font-weight: 600;
+}
+
+/* ─── Password Strength Checker Preview ─── */
+.proj-preview--passwd {
+  background: linear-gradient(135deg, #0f172a 0%, #1a1a2e 100%);
+}
+.passwd-anim {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  align-items: stretch;
+}
+.passwd-input {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(56,189,248,0.3);
+  border-radius: 6px;
+  padding: 5px 10px;
+  text-align: center;
+}
+.passwd-dots {
+  color: #38bdf8;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+.passwd-meter {
+  height: 6px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.meter-bar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+.meter-bar.strong {
+  width: 90%;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+.passwd-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-align: center;
+}
+.strong-label {
+  color: #22c55e;
 }
