@@ -133,71 +133,73 @@
 
  <!-- ════════════════════════════
        ABOUT
-  ════════════════════════════ -->
-  <section id="about">
-    <div class="container">
-      <div class="section-label reveal-up">
-        <span class="label-line"></span>
-        <span>01 — About Me</span>
+════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="section-label reveal-up">
+      <span class="label-line"></span>
+      <span>01 — About Me</span>
+    </div>
+
+    <div class="about-grid">
+      <!-- Profile image / avatar panel -->
+      <div class="about-image-wrap reveal-left">
+        <div class="image-tilt-wrapper" id="tiltCard">
+          <div class="image-tilt-inner">
+
+            <!-- 🔥 REPLACED SVG WITH IMAGE -->
+            <div class="profile-placeholder">
+              <img src="profile.jpg" alt="My Profile" class="profile-img">
+              <div class="profile-glow"></div>
+            </div>
+
+            <div class="tilt-shine"></div>
+          </div>
+        </div>
+
+        <!-- Floating stat badges -->
+        <div class="about-badge about-badge--exp">
+          <span class="badge-num">2nd</span>
+          <span class="badge-text">Year<br>ECS Student</span>
+        </div>
+        <div class="about-badge about-badge--proj">
+          <span class="badge-num">7+</span>
+          <span class="badge-text">Projects<br>Built</span>
+        </div>
       </div>
 
-      <div class="about-grid">
-        <!-- Profile image / avatar panel -->
-        <div class="about-image-wrap reveal-left">
-          <div class="image-tilt-wrapper" id="tiltCard">
-            <div class="image-tilt-inner">
-              <!-- UPDATED: Profile Picture replaces SVG illustration -->
-              <div class="profile-placeholder">
-                <div class="profile-avatar">
-                  <img src="profile.jpg" alt="Aarya Lad" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-                </div>
-                <div class="profile-glow"></div>
-              </div>
-              <div class="tilt-shine"></div>
-            </div>
-          </div>
+      <!-- Text content -->
+      <div class="about-text reveal-right">
+        <h2 class="section-title">
+          Building with <em class="gradient-text">code</em> &amp;<br>curiosity
+        </h2>
 
-          <!-- Floating stat badges -->
-          <div class="about-badge about-badge--exp">
-            <span class="badge-num">2nd</span>
-            <span class="badge-text">Year<br>ECS Student</span>
-          </div>
-          <div class="about-badge about-badge--proj">
-            <span class="badge-num">7+</span>
-            <span class="badge-text">Projects<br>Built</span>
-          </div>
+        <p>
+          Second-year Electronics and Computer Science (ECS) student at Fr. Conceicao Rodrigues College of Engineering, Mumbai University. Strong interest in cybersecurity, networking fundamentals, and hands-on problem solving.
+        </p>
+        <p>
+          Passionate about building real-world projects using Arduino, programming, and web technologies. I believe great engineering lives at the intersection of logical thinking and creative experimentation.
+        </p>
+
+        <!-- Interest tags -->
+        <div class="about-tags">
+          <span class="atag">🔒 Cybersecurity</span>
+          <span class="atag">🤖 Arduino &amp; IoT</span>
+          <span class="atag">💻 C / C++ / Python</span>
+          <span class="atag">🌐 Networking</span>
         </div>
 
-        <!-- Text content -->
-        <div class="about-text reveal-right">
-          <h2 class="section-title">
-            Building with <em class="gradient-text">code</em> &amp;<br>curiosity
-          </h2>
-
-          <p>
-            Second-year Electronics and Computer Science (ECS) student at Fr. Conceicao Rodrigues College of Engineering, Mumbai University. Strong interest in cybersecurity, networking fundamentals, and hands-on problem solving.
-          </p>
-          <p>
-            Passionate about building real-world projects using Arduino, programming, and web technologies. I believe great engineering lives at the intersection of logical thinking and creative experimentation.
-          </p>
-
-          <!-- Interest tags -->
-          <div class="about-tags">
-            <span class="atag">🔒 Cybersecurity</span>
-            <span class="atag">🤖 Arduino &amp; IoT</span>
-            <span class="atag">💻 C / C++ / Python</span>
-            <span class="atag">🌐 Networking</span>
-          </div>
-
-          <!-- Resume download -->
-          <a href="resume.pdf" class="btn btn-outline" download>
-            <span>Download Resume</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          </a>
-        </div>
+        <!-- Resume download -->
+        <a href="resume.pdf" class="btn btn-outline" download>
+          <span>Download Resume</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+          </svg>
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ════════════════════════════
        EDUCATION
@@ -440,65 +442,71 @@
           </div>
         </div>
 
-        <!-- Project 3: Scientific Calculator -->
+        <!-- Project 3: Faculty Data Formatter -->
         <div class="project-card glass reveal-up">
           <div class="card-glow"></div>
           <div class="project-meta">
-            <span class="project-tag">C / C++</span>
+            <span class="project-tag">Full-Stack — Node.js</span>
             <div class="project-links">
               <a href="#" class="icon-btn" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.933.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
             </div>
           </div>
           <div class="project-visual">
-            <div class="proj-preview proj-preview--calc">
+            <div class="proj-preview proj-preview--faculty">
               <div class="preview-bar"></div>
               <div class="preview-content">
-                <div class="calc-grid">
-                  <div class="calc-cell">7</div><div class="calc-cell">8</div><div class="calc-cell">9</div><div class="calc-cell accent">÷</div>
-                  <div class="calc-cell">4</div><div class="calc-cell">5</div><div class="calc-cell">6</div><div class="calc-cell accent">×</div>
-                  <div class="calc-cell">1</div><div class="calc-cell">2</div><div class="calc-cell">3</div><div class="calc-cell accent">−</div>
+                <div class="faculty-anim">
+                  <div class="faculty-table">
+                    <div class="faculty-header">
+                      <div class="fh-cell">Name</div>
+                      <div class="fh-cell">Dept</div>
+                      <div class="fh-cell">ID</div>
+                    </div>
+                    <div class="faculty-row"><div class="fr-cell">Prof. A</div><div class="fr-cell">CS</div><div class="fr-cell">101</div></div>
+                    <div class="faculty-row"><div class="fr-cell">Prof. B</div><div class="fr-cell">ECS</div><div class="fr-cell">102</div></div>
+                  </div>
+                  <div class="faculty-arrow">↓</div>
+                  <div class="faculty-badge">Supabase Sync</div>
                 </div>
               </div>
             </div>
           </div>
-          <h3 class="project-title">Scientific Calculator</h3>
-          <p class="project-desc">Console-based arithmetic calculator built in C/C++ supporting all fundamental math operations and operator precedence.</p>
+          <h3 class="project-title">Faculty Data Formatter</h3>
+          <p class="project-desc">Full-stack web app for colleges — faculty upload an Excel file, the system fetches the Supabase table schema and auto-reorders columns to match the database structure, then provides a formatted download.</p>
           <div class="project-stack">
-            <span>C</span><span>C++</span><span>Console App</span>
+            <span>Node.js</span><span>Express</span><span>Supabase</span><span>SheetJS</span><span>Multer</span>
           </div>
         </div>
 
-        <!-- Project 4: Tic-Tac-Toe -->
+        <!-- Project 4: Password Strength Checker -->
         <div class="project-card glass reveal-up">
           <div class="card-glow"></div>
           <div class="project-meta">
-            <span class="project-tag">Game — C/C++</span>
+            <span class="project-tag">Cybersecurity</span>
             <div class="project-links">
               <a href="#" class="icon-btn" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.933.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
             </div>
           </div>
           <div class="project-visual">
-            <div class="proj-preview proj-preview--ttt">
+            <div class="proj-preview proj-preview--passwd">
               <div class="preview-bar"></div>
               <div class="preview-content">
-                <div class="ttt-grid">
-                  <div class="ttt-cell x-mark">X</div>
-                  <div class="ttt-cell"></div>
-                  <div class="ttt-cell o-mark">O</div>
-                  <div class="ttt-cell"></div>
-                  <div class="ttt-cell x-mark">X</div>
-                  <div class="ttt-cell"></div>
-                  <div class="ttt-cell o-mark">O</div>
-                  <div class="ttt-cell"></div>
-                  <div class="ttt-cell x-mark">X</div>
+                <div class="passwd-anim">
+                  <div class="passwd-input">
+                    <span class="passwd-dots">••••••••</span>
+                  </div>
+                  <div class="passwd-meter">
+                    <div class="meter-bar strong"></div>
+                  </div>
+                  <div class="passwd-label strong-label">Strong 🔒</div>
                 </div>
               </div>
             </div>
           </div>
-          <h3 class="project-title">Tic-Tac-Toe</h3>
-          <p class="project-desc">Two-player console game in C/C++ with full win detection, draw handling, and turn-based gameplay logic.</p>
+          <h3 class="project-title">Password Strength Checker</h3>
+          <p class="project-desc">Cybersecurity-focused tool that evaluates password strength in real-time — built after completing the Introduction to Cybersecurity certification, applying knowledge of secure credential practices.</p>
           <div class="project-stack">
-            <span>C</span><span>C++</span><span>Game Logic</span>
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Cybersecurity</span>
           </div>
         </div>
 
@@ -590,6 +598,50 @@
             <h3 class="cert-title">Introduction to Cybersecurity</h3>
             <p class="cert-issuer">Cisco Networking Academy</p>
             <p class="cert-desc">Covered CIA triad, threat landscape, network security fundamentals, and best practices for digital safety.</p>
+          </div>
+          <div class="cert-badge">Verified</div>
+        </div>
+
+        <div class="cert-card glass reveal-up">
+          <div class="cert-glow"></div>
+          <div class="cert-icon">💻</div>
+          <div class="cert-body">
+            <h3 class="cert-title">C Programming</h3>
+            <p class="cert-issuer">Verified Certification</p>
+            <p class="cert-desc">Fundamentals of C programming including data types, control flow, functions, pointers, and memory management.</p>
+          </div>
+          <div class="cert-badge">Verified</div>
+        </div>
+
+        <div class="cert-card glass reveal-up">
+          <div class="cert-glow"></div>
+          <div class="cert-icon">🌐</div>
+          <div class="cert-body">
+            <h3 class="cert-title">Introduction to HTML</h3>
+            <p class="cert-issuer">Verified Certification</p>
+            <p class="cert-desc">Core concepts of HTML including document structure, semantic elements, forms, tables, and web standards.</p>
+          </div>
+          <div class="cert-badge">Verified</div>
+        </div>
+
+        <div class="cert-card glass reveal-up">
+          <div class="cert-glow"></div>
+          <div class="cert-icon">🗄️</div>
+          <div class="cert-body">
+            <h3 class="cert-title">SQL (Basic)</h3>
+            <p class="cert-issuer">Verified Certification</p>
+            <p class="cert-desc">Foundations of SQL including SELECT queries, filtering, joins, aggregation functions, and database operations.</p>
+          </div>
+          <div class="cert-badge">Verified</div>
+        </div>
+
+        <div class="cert-card glass reveal-up">
+          <div class="cert-glow"></div>
+          <div class="cert-icon">🐍</div>
+          <div class="cert-body">
+            <h3 class="cert-title">Python (Basic)</h3>
+            <p class="cert-issuer">Verified Certification</p>
+            <p class="cert-desc">Python essentials covering variables, data types, control structures, functions, and introductory scripting concepts.</p>
           </div>
           <div class="cert-badge">Verified</div>
         </div>
